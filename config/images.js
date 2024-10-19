@@ -309,7 +309,7 @@ async function getImageTransformed(
 
     if(isAssetImg) {
         img.page.inputPath = "./src/assets/img/"
-        img.page.outputPath = `public/assets/${path.dirname(src)}/.` // final point is required, else it goes into public/assets
+        img.page.outputPath = `docs/assets/${path.dirname(src)}/.` // final point is required, else it goes into public/assets
         img.page.url = `assets/${path.dirname(src)}/`
     }
     await img.transformImage()
