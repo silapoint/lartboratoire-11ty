@@ -7,7 +7,7 @@
                 <p class="footer-social-text">Art et artistes ailleurs sur Internet</p>
                 <div class="footer-social-wrapper">
                     {% for social in socials %}
-                        <a class="footer-social-icon" href="{{ social.url }}" target="_blank" rel="nofollow">
+                        <a class="footer-social-icon" aria-label="{{ social.name }}" title="{{ social.name }}" href="{{ social.url }}" target="_blank" rel="nofollow">
                             {% svg social.icon_path %}
                         </a>
                     {% endfor %}

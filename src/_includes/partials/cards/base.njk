@@ -1,6 +1,6 @@
 <article class="card">
   <figure>
-    <a href="{{ post.url }}">
+    <a href="{{ post.url }}" aria-label="{{ post.data.title }}">
         {% RelImage post.page, post.data.thumbnail, post.data.thumbnail_alt, "(max-width: 800px) 70vw,(max-width: 1200px) 49vw, 33vw" %}
     </a>
     <figcaption>
