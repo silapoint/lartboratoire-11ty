@@ -132,7 +132,7 @@ class CstImage {
             <img
             class="lazy-base64"
             src="${ this.base64Placeholder }"
-            alt="Placeholder"
+            alt="Placeholder pour ${ this.alt }"
             aria-hidden="true"
             >
             <canvas
@@ -171,7 +171,7 @@ class CstImage {
                 <img
                     class="lazy-base64"
                     src="${ this.base64Placeholder }"
-                    alt="Placeholder"
+                    alt="Placeholder pour ${ this.alt }"
                 >
                 <canvas
                 class="attachment-post-thumbnail"
