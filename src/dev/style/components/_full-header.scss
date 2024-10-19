@@ -1,0 +1,78 @@
+@import '../../toolkit/variables';
+
+.full {
+  &-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 5%;
+    max-width: $maxcontentwidth;
+    align-items: center;
+    margin: auto;
+
+    &-num, &-count {
+      // the following blocks have a 1rem padding-top; it's easier to user
+      // an asymetric padding for the numbers than changing .card
+      padding: $menuheight 5% $minimalspace 5%;
+      font-size: $slightspace;
+    }
+
+    &-count {
+      grid-column: 2;
+      text-align: right;
+    }
+
+    .full-header-card {
+      // need to use the full name to override the
+      // .card default class
+      grid-column: 1/3;
+      justify-self: center;
+      padding-bottom: $minimalspace;
+      margin-bottom: 8vh; // let the grid breathe :)
+
+      #full-header-img {
+        width: 100%; // needed to compensate the width/height HTML attributes
+        height: auto;
+      }
+
+      &-top {
+        // sometimes, there is nothing above the full header so we still want
+        // to add some margin :)
+        // e.g.: aleartoire single
+        margin-top: 8vh;
+      }
+
+      p {
+        font-family: $secondaryfont;
+        padding: 0 5% $slightspace 5%;
+      }
+    }
+
+    &-title {
+      font-size: $mediumspace;
+      margin: $basespace 5% $minimalspace 5%;
+    }
+
+    &-subtitle {
+      font-size: $halfspace;
+      margin: 0 5% $minimalspace 5%;
+    }
+
+    &-list {
+      list-style: none;
+      padding: 0 5% $slightspace 5%;
+    }
+
+    &-listitem {
+      padding: 0.3rem 0;
+    }
+
+    &-credits {
+      padding: $slightspace 5%;
+      text-align: right;
+
+      &-link {
+        font-weight: bold;
+      }
+    }
+  } // .full-header
+} // .full

@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+context: "home"
+--- 
+{# Generating the various responsive image for the home page image #}
+{% set imageData = home.home_image | transformImage(true) %}
+<header class="home-header">
+  <h1 class="home-title" aria-label="l'artboratoire">
+    <span class="letter" aria-hidden="true">l</span><span class="letter" aria-hidden="true">'</span><span class="highlight home-title-art" aria-hidden="true"><span class="letter">a</span><span class="letter">r</span><span class="letter">t</span></span><span class="letter" aria-hidden="true">b</span><span class="letter" aria-hidden="true">o</span><span class="letter" aria-hidden="true">r</span><span class="letter" aria-hidden="true">a</span><span class="letter" aria-hidden="true">t</span><span class="letter" aria-hidden="true">o</span><span class="letter" aria-hidden="true">ı</span><span class="letter" aria-hidden="true">r</span><span class="letter" aria-hidden="true">e</span><span class="highlight letter" aria-hidden="true">.</span>
+  </h1>
+  <h2 class="home-subtitle">
+    <a class="hide-link" href="#content"><span>Découvrir</span> <span class="home-subtitle-change">l'art</span> <span>autrement</span></a>
+  </h2>
+
+  <div class="home-header-wrapper">
+      <div class="tr-hide-wrapper" aria-hidden="true">
+    <div class="tr-hide"></div>
+  </div>
+  <svg id="home-header-svg"
+      class="tr-to-reveal"
+      width="1698"
+      height="2560"
+      viewBox="0 0 1698 2560"
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <foreignObject x="0" y="0" width="1698" height="2560" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <img id="home-header-img"
+          src="{{ imageData.metadata.mainImage.url }}"
+          srcset="{{ imageData.metadata.srcset }}"
+          sizes="(max-width: 800px) 80vw, 45vw"
+          alt="{{ home.home_image_alt }}"
+          />
+      </foreignObject>
+
+      <ellipse class="sclera" cx="510" cy="1190.5" rx="90" ry="51.5"/>
+      <circle class="pupil" id="pupil-left" cx="475.5" cy="1195" r="26.5"/>
+      <ellipse class="sclera" cx="981" cy="1120.5" rx="82" ry="66.5"/>
+      <circle class="pupil" id="pupil-right" cx="953.5" cy="1135" r="28.5"/>
+  </svg>
+
+  </div>
+</header>
+
+
+
+<div class="grid-wrapper" id="content" tabindex="-1">
+  <div class="grid">
+  
+    {% set current_posts = collections.recentPostsHome %}
+    {% include 'partials/grid.njk' %}
+  </div>
+</div>

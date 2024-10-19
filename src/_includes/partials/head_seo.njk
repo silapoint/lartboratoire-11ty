@@ -1,0 +1,179 @@
+{% if seo and seo.desc %}
+    {% set desc = seo.desc %}
+{% else %}
+    {% set desc = site.meta.desc %}
+{% endif %}
+
+{% if title %}
+    {% set title = title ~ " | L'artboratoire" %}
+{% else %}
+    {% set title = site.meta.title %}
+{% endif %}
+
+{% if published %}
+    {% set published_date = published | toISO('fromString') %}
+{% else %}
+    {% set published_date = page.date | toISO %}
+{% endif %}
+{% set modified_date = page.date | toISO %}
+
+{% if thumbnail %}
+    {# Looking at pages/posts #}
+    {% set mainImageData = thumbnail | transformImage %}
+    {% set alt = thumbnail_alt %}
+{% elif tag and archives.all[tag.tagName] %}
+    {# Looking at tags/categoriess #}
+    {% set mainImageData = archives.all[tag.tagName].image | transformImage(true, true) %}
+    {% set alt = archives.all[tag.tagName].alt %}
+{% else %}
+    {# Default #}
+    {% set mainImageData = home.home_image | transformImage(true) %}
+    {% set alt = home.home_image_alt %}
+{% endif %}
+
+{% set current_url = page.url | absoluteUrl(site.meta.url)%}
+
+
+
+<meta name="description" content="{{ desc }}"/>
+<meta name="robots" content="{% if seo and seo.robots %}{{ seo.robots }}{% else %}index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large{% endif %}"/>
+
+{% if tag or author %}
+    {% if tag %}
+        {% set current_pagination_key = tag.tagName %}
+    {% else %}
+        {% set current_authors = authors | getAuthors(author) %}
+        {% set current_pagination_key = current_authors[0].key %}
+    {% endif %}
+    {% if current_pagination_key and pagination.href.previous and current_pagination_key in pagination.href.previous %}
+        <link rel="prev" href="{{ site.meta.url }}{{ pagination.href.previous }}" />
+    {% endif %}
+    {% if current_pagination_key and pagination.href.next and current_pagination_key in pagination.href.next %}
+        <link rel="next" href="{{ site.meta.url }}{{ pagination.href.next }}" />
+    {% endif %}
+{% endif %}
+
+{% if seo and seo.canonical %}
+    <link rel="canonical" href="{{ site.meta.url }}{{ seo.canonical }}" />
+{% else %}
+    <link rel="canonical" href="{{ current_url }}" />
+{% endif %}
+
+{% if seo and seo.alternate %}
+    {% for alt_lang, alt_link in seo.alternate %}
+        <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.meta.url }}{{ alt_link }}" />
+    {% endfor %}
+{% endif %}
+
+
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ desc }}" />
+<meta property="og:url" content="{{ current_url }}" />
+<meta property="og:site_name" content="{{ site.meta.name }}" />
+<meta property="article:published_time" content="{{ published_date }}" />
+<meta property="article:modified_time" content="{{ modified_date }}" />
+<meta property="og:updated_time" content="{{ modified_date }}" />
+
+<meta property="article:tag" content="Art" />
+{% if tags %}
+    {% for tag in tags | filterTagList %}
+        {% if archives.all[tag] %}
+            <meta property="article:tag" content="{{ archives.all[tag].name }}" />
+        {% endif %}
+    {%- endfor %}
+{% endif %}
+{% if author %}
+    {% set current_authors = authors | getAuthors(author) %}
+    {% for pa in current_authors %}
+        <meta property="article:author" content="{{ pa.name }}" />
+    {% endfor %}
+{% endif %}
+
+<meta property="og:image" content="{{ site.meta.url }}{{ mainImageData.metadata.mainImage.url }}" />
+<meta name="twitter:image" content="{{ site.meta.url }}{{ mainImageData.metadata.mainImage.url }}" />
+
+<meta property="og:image:alt" content="{{ alt }}" />
+<meta name="twitter:image:alt" content="{{ alt }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ desc }}" />
+<meta name="twitter:site" content="{{ site.meta.twitter }}" />
+
+{% set imageDataHeader = site.meta.header | transformImage(true) %}
+<script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@graph":[
+        {"@type":"Organization",
+        "@id":"{{ site.meta.url }}#organization",
+        "name":"{{ site.meta.name }}",
+        "url":"{{ site.meta.url }}",
+        "email":"{{ site.meta.email }}",
+        "logo":{
+            "@type":"ImageObject",
+            "@id":"{{ site.meta.url }}/#logo",
+            "url":"{{ site.meta.url }}{{ imageDataHeader.metadata.mainImage.url }}",
+            "contentUrl":"{{ site.meta.url }}{{ imageDataHeader.metadata.mainImage.url }}",
+            "caption":"{{ site.meta.name }}","inLanguage":"fr-FR","width":"{{ imageDataHeader.metadata.mainImage.width }}","height":"{{ imageDataHeader.metadata.mainImage.height }}"
+            }
+        },
+        {
+            "@type":"WebSite",
+            "@id":"{{ site.meta.url }}#website",
+            "url":"{{ site.meta.url }}",
+            "name":"{{ site.meta.name }}",
+            "publisher":{"@id":"{{ site.meta.url }}#organization"},
+            "inLanguage":"fr-FR"},
+            {"@type":"ImageObject",
+            "@id":"{{ site.meta.url }}{{ mainImageData.metadata.mainImage.url }}",
+            "url":"{{ site.meta.url }}{{ mainImageData.metadata.mainImage.url }}",
+            "width":"{{ mainImageData.metadata.mainImage.width }}","height":"{{ mainImageData.metadata.mainImage.height }}",
+            "caption":"{{ alt }}",
+            "inLanguage":"fr-FR"
+        },
+        {
+            "@type":"WebPage",
+            "@id":"{{current_url}}#webpage",
+            "url":"{{current_url}}",
+            "name":"{{ title }}",
+            "datePublished":"{{ published_date }}",
+            "dateModified":"{{ modified_date }}",
+            "isPartOf":{"@id":"{{ site.meta.url }}/#website"},
+            "primaryImageOfPage":{"@id":"{{ site.meta.url }}{{ mainImageData.metadata.mainImage.url }}"},
+            "inLanguage":"fr-FR"
+        }
+        {% if author %}
+        ,
+            {% set current_authors = authors | getAuthors(author) %}
+            {% set first_author = current_authors[0] %}
+            {"@type":"BlogPosting",
+            "headline":"{{ title }}",
+            {% if tags %}
+                {% set tag_string = "" %}
+                {%- for tag in tags | filterTagList %}
+                    {% if archives.all[tag] %}
+                        {% set tag_string = tag_string ~ " " ~ archives.all[tag].name %}
+
+                    {% endif %}
+                {%- endfor %}
+                "keywords":"{{ tag_string }}",
+            {% endif %}
+            "datePublished":"{{ published_date }}",
+            "dateModified":"{{ modified_date }}",
+            "author":
+                {"@id":"{{ site.meta.url }}author/{{ first_author.key }}/",
+                "name":"{{ first_author.name }}"},
+                "publisher":{"@id":"{{ site.meta.url }}/#organization"},
+                "description":"{{ desc }}",
+                "@id":"{{ current_url }}/#richSnippet",
+                "isPartOf":{"@id":"{{ current_url }}/#webpage"},
+                "image":{"@id":"{{ mainImageData.metadata.mainImage.url }}"},
+                "inLanguage":"fr-FR",
+            "mainEntityOfPage":{"@id":"{{ current_url }}/#webpage"}}
+        {% endif %}        
+        ]
+        }
+</script>

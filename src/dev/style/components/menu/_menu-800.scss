@@ -1,0 +1,33 @@
+// displaying images for archives
+
+.menu-card {
+  .item {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+
+    &-wrapper {
+      grid-row: 1/3;
+    }
+
+    &-post {
+      &-title {
+        padding: 1rem 0 0 0;
+      }
+
+      &-img {
+        display: inherit;
+        grid-column: 2;
+        grid-row: 1/3;
+        align-self: center;
+
+        .attachment-post-thumbnail {
+          height: 9.5rem;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}

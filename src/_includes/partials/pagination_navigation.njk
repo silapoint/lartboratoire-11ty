@@ -1,0 +1,39 @@
+{# 
+    As the current pagination merges all tags at once 
+    (see https://github.com/11ty/eleventy/issues/332#issuecomment-445236776 )
+    we need to check if previous / next links correspond to the same tag 
+    to know if we're at the edges of the current tag collection
+  #}
+  {% set pagination_classes = 'btn pagination-link' %}
+  {% set previous_str = 'PAGE PRÉCÉDENTE' %}
+  {% set next_str = 'PAGE SUIVANTE' %}
+  <div class="pagination">
+
+  {% if current_pagination_key and pagination.href.previous and current_pagination_key in pagination.href.previous %}
+    <p class="{{ pagination_classes }} pagination-link-previous">
+      <a class="hide-link" href="{{ pagination.href.previous }}">
+        {% svg 'arrow-up' %}
+        <span class="pagination-link-text">{{ previous_str }}</span>
+      </a>
+    </p>
+  {% else %}
+    <p class="btn-inactive {{ pagination_classes }} pagination-link-previous pagination-link-nopost">
+        {% svg 'arrow-up' %}
+        <span class="pagination-link-text">{{ previous_str }}</span>
+    </p>
+  {% endif %}
+
+  {% if current_pagination_key and pagination.href.next and current_pagination_key in pagination.href.next %}
+    <p class="{{ pagination_classes }} pagination-link-next">
+      <a class="hide-link" href="{{ pagination.href.next }}">
+        <span class="pagination-link-text">{{ next_str }}</span>
+        {% svg 'arrow-up' %}
+      </a>
+    </p>
+  {% else %}
+    <p class="btn-inactive {{ pagination_classes }} pagination-link-next pagination-link-nopost">
+        <span class="pagination-link-text">{{ next_str }}</span>
+        {% svg 'arrow-up' %}
+    </p>
+  {% endif %}
+  </div>

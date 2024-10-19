@@ -1,0 +1,123 @@
+<nav id="nav">
+  <div class="menu card-container">
+    <a id="logo" class="hide-link" href="{{ site.meta.url }}">
+      <p>
+        l'<span class="highlight">art</span>boratoire<span class="highlight">.</span>
+      </p>
+    </a>
+    <button id="menu-button" aria-haspopup="true" aria-expanded="false">menu</button>
+  </div>
+  <div id="main-menu" class="menu-card">
+    <ul>
+        <li class="item"
+            id="categories"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >
+          Catégories
+        </li>
+        <li class="item"
+            id="themes"
+            aria-haspopup="true"
+            aria-expanded="false">
+          Thèmes
+        </li>
+        <li class="item"
+            id="informations"
+            aria-haspopup="true"
+            aria-expanded="false">
+          Informations
+        </li>
+        <li class="item ignore-click">
+            <a id="item-get-involved"
+             class="hide-link ignore-click"
+             href="/rechercher">
+            Rechercher
+          </a>
+        </li>
+        <li class="item ignore-click">
+          <a id="item-get-involved"
+             class="force-link ignore-click"
+             href="/participer/">
+            Participer
+          </a>
+        </li>
+    </ul>
+  </div>
+
+  <div class="menu-card" id="categories-card">
+    <div class="menu-card-description">
+        {% svg 'cross' %}
+        <p class="menu-card-description-text">Catégories</p>
+    </div>
+    <ul aria-labelledby="categories">
+        {% asyncEach arch in archives.cats_list %}
+            {% set type = "categorie" %}
+            {% include 'partials/menu_items.njk' %}
+        {% endeach %}
+    </ul>
+  </div>
+
+  <div class="menu-card" id="themes-card">
+    <div class="menu-card-description">
+      {% svg 'cross' %}
+      <p class="menu-card-description-text">Thèmes</p>
+    </div>
+    <ul aria-labelledby="themes">
+      {% asyncEach arch in archives.tags_list %}
+            {% set type = "tag" %}
+            {% include 'partials/menu_items.njk' %}
+        {% endeach %}
+    </ul>
+  </div>
+
+  <div class="menu-card" id="informations-card">
+    <div class="menu-card-description">
+      {% svg 'cross' %}
+      <p class="menu-card-description-text">Informations</p>
+    </div>
+    <ul aria-labelledby="informations">
+      <li class="item">
+        <a class='hide-link' href='/a-propos/'>
+          À propos
+        </a>
+      </li>
+      <li class="item">
+        <a class='hide-link' href='/politique-confidentialite/'>
+          Politique de confidentialité
+        </a>
+      </li>
+      <li class="item">
+        <a class='hide-link' href='/mentions-legales/'>
+          Mentions légales
+        </a>
+      </li>
+      <li class="item">
+        <a class='hide-link' href='/categorie/devblog/'>
+          Devblog
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="menu-card" id="search-card">
+    <div class="menu-card-description">
+      {% svg 'cross' %}
+      <form method="get"
+            action="{{ site.meta.name }}"
+            role="search"
+            aria-labelledby="search"
+            id="menu-search-form">
+        <label for="search-input" class="a11y-hide">Valeur de la recherche</label>
+        <input type="text"
+               value="<?php the_search_query(); ?>"
+               placeholder="Ex: aenami"
+               name="s"
+               id="search-input" />
+        <input type="submit"
+               value="rechercher"
+               id="search-submit"/>
+      </form>
+    </div>
+  </div>
+</nav>

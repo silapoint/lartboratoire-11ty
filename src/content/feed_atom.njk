@@ -1,0 +1,30 @@
+---
+permalink: /atom.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ site.meta.url }}">
+  <title>{{ site.meta.name }}</title>
+  <subtitle>{{ site.meta.title }}</subtitle>
+  <link href="{{ permalink | absoluteUrl(site.meta.url) }}" rel="self"/>
+  <link href="{{ site.meta.url }}"/>
+  <updated>{{ collections.article | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ site.meta.url }}</id>
+  {%- for post in collections.recentPostsHome | publishedReverse %}
+  {%- set absolutePostUrl = post.url | absoluteUrl(site.meta.url) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content xml:lang="{{ site.meta.lang }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    {% set current_authors = authors | getAuthors(post.data.author) %}
+    {% for ca in current_authors %}
+      <author>
+        <name>{{ ca.name }}</name>
+      </author>
+    {% endfor %}
+  </entry>
+  {%- endfor %}
+</feed>
+

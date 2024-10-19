@@ -1,0 +1,58 @@
+---
+layout: layouts/base.njk
+context: "single"
+---
+
+<article class="content-wrapper">
+  <div class="content" data-pagefind-body>
+    <header class="content-header">
+        {% if thumbnail %}
+          {% Thumbnail thumbnail, thumbnail_alt %}
+        {% endif %}
+
+        <h1 class="header-title">{{ title }}</h1>
+        {% if author %}
+          {% set current_authors = authors | getAuthors(author) %}
+          <p class="header-author">Par {% for ca in current_authors %}
+                <span class="header-author-link"><a href="/author/{{ ca.key }}">{{ ca.name }}</a></span>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+          </p>
+      {% endif %}
+
+      {% if tags %}
+        <ul class='cat-list'>
+            {%- for tag in tags | filterTagList %}
+              {% if archives["categorie"][tag].name %}
+                <li class="cat-items"><a class="hide-link" href="/categorie/{{ tag }}">{{ archives["categorie"][tag].name }}</a></li>
+              {% elif archives["tag"][tag].name %}
+                <li class="cat-items"><a class="hide-link" href="/tag/{{ tag }}">{{ archives["tag"][tag].name }}</a></li>
+              {% endif %}
+            {%- endfor %}
+        </ul>
+      {% endif %}
+        
+        <hr>
+    </header>
+    
+    {{ content | safe }} 
+
+    {% if '/pages/' not in page.inputPath %} 
+      <hr>
+      <div class="content-cta">
+        <button id="share-cta"
+                class="content-cta-button"
+                aria-haspopup="true"
+                aria-expanded="false">Partager l'article</button>
+        <p class="btn content-cta-button content-cta-button-right"><a class="hide-link" href="/participer/">Publier le vôtre</a></p>
+        {% include 'partials/cards/popups/sharing.njk' %}
+      </div>
+    {% endif %} 
+  </div>
+</article>
+
+{% if '/pages/' not in page.inputPath %} 
+    {% set tmp_arr = [0] %}
+    {% asyncEach tmp  in tmp_arr %}
+      {% include 'partials/relatedposts.njk' %}
+    {% endeach %}
+{% endif %}

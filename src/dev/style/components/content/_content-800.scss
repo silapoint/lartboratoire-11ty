@@ -1,0 +1,32 @@
+.content {
+  &-cta {
+    grid-template-columns: 1fr 1fr;
+    &-button {
+      text-align: left;
+
+      &-right {
+        text-align: right;
+      }
+    }
+  }
+
+  blockquote {
+    p {
+      padding-left: 6%;
+    }
+
+    &:before {
+      content: '“';
+      position: absolute;
+      color: $maincolor;
+      font-size: $extralargespace;
+      font-family: $mainfont;
+      top: -$slightspace;
+      left: 5.5%;
+    }
+
+    &:after {
+      background-color: $dark;
+    }
+  }
+}

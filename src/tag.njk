@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+context: "archive"
+pagination:
+  data: collections.doublePagination
+  size: 1
+  alias: tag
+permalink: /{% if tag.tagName in archives.cats_list %}categorie{% else%}tag{% endif %}/{{ tag.tagName }}/{% if tag.pageNumber %}page/{{ tag.pageNumber + 1 }}/{% endif %}
+---
+
+{% if archives.all[tag.tagName] %}
+  {% set title = archives.all[tag.tagName].name %}
+{% else %}
+  {% set title = "Archives : " ~ tag.tagName %}
+{% endif %}
+
+
+<header class="full-header">
+  {# Required because somehow pagination.pageNumber does not correspond but the alias does #}
+  {% set current_pagination = tag %}
+  {% set current_pagination_key = tag.tagName %}
+
+  {% include 'partials/pagination_pages.njk' %}
+
+  {# Possibly, we're dealing with 'page' or 'post' tags, which have no thumbnail or anything #}
+  {% if archives.all[tag.tagName] %} 
+    {# Generating the various responsive version of the image #}
+    {% set imageData = archives.all[tag.tagName].image | transformImage(true, true) %}
+    <div class="full-header-card card"
+      style="max-width: {{ imageData.metadata.mainImage.width }}px;" >
+    <img class="wp-post-image"
+      src="/{{ imageData.metadata.mainImage.url }}"
+      srcset="{{ imageData.metadata.srcset }}"
+      sizes="100vw"
+      alt="{{ archives.all[tag.tagName].alt }}" 
+    />
+  {% else %}
+    <div class="full-header-card card">
+  {% endif %}
+      <h1 class="full-header-title">{{ title }}</h1>
+      {% if archives.all[tag.tagName] %}
+        {% for paragraph in archives.all[tag.tagName].desc %}
+          <p>{{ paragraph | safe }}</p>
+        {% endfor%}
+        {% if archives.all[tag.tagName].cred %} 
+          <p class="full-header-credits">Crédits : <span class="full-header-credits-link">{{ archives.all[tag.tagName].cred | safe }}</span></p>
+        {% endif %}
+      {% endif %}
+  </div>
+</header>
+
+<section class="grid-wrapper">
+  <div class="grid">
+    {% set current_posts = tag.pageData %}
+    {% include 'partials/grid.njk' %}
+  </diV>
+
+  {% include 'partials/pagination_navigation.njk' %}
+</section>

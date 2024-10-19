@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+context: "archive"
+pagination:
+  data: collections.doublePaginationAuthor
+  size: 1
+  alias: authorPosts
+permalink: /author/{{ authorPosts.authorKey }}/{% if authorPosts.pageNumber %}page/{{ authorPosts.pageNumber + 1 }}/{% endif %}
+---
+
+{% set current_pagination = authorPosts %}
+{% set current_pagination_key = authorPosts.authorKey %}
+
+<header class="full-header">
+  {# Required because somehow pagination.pageNumber does not correspond but the alias does #}
+  {% include 'partials/pagination_pages.njk' %}
+</header>
+
+<section class="grid-wrapper">
+  <div class="grid">
+    {% set current_posts = authorPosts.pageData %}
+    {% include 'partials/grid.njk' %}
+  </diV>
+
+  {% include 'partials/pagination_navigation.njk' %}
+</section>

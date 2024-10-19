@@ -1,0 +1,7 @@
+@import '../../toolkit/variables';
+
+@import '../../components/content/content';
+@import '../../components/comments';
+@media screen and (min-width:800px){
+  @import '../../components/content/content-800';
+}

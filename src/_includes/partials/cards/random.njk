@@ -1,0 +1,10 @@
+
+{% if collections.randomPost | length > 0 %}
+{% set random_post = collections.randomPost %}
+<article class="card card-with-icon">
+    {% svg 'shuffle' %}
+    <h2 class="card-title">De l'art au hasard</h2>
+    <p class="card-text">Laissez-vous porter par les aléas pour découvrir un article !</p>
+    <p class="btn card-cta"><a class="hide-link" href="{{ random_post.page.url }}">C'est parti !</a></p>
+</article>
+{% endif %}

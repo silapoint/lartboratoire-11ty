@@ -1,0 +1,39 @@
+            </div> <!-- barba-container -->
+        </main> <!-- barba-wrapper -->
+
+
+        <footer>
+            <div class="footer-social">
+                <p class="footer-social-text">Art et artistes ailleurs sur Internet</p>
+                <div class="footer-social-wrapper">
+                    {% for social in socials %}
+                        <a class="footer-social-icon" href="{{ social.url }}" target="_blank" rel="nofollow">
+                            {% svg social.icon_path %}
+                        </a>
+                    {% endfor %}
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-informations">
+                <div class="footer-informations-legal">
+                    <p>
+                    Contact :<br/>
+                    <span class="email">{{ site.meta.email }}</span>
+                    </p>
+                    <p>
+                    ISSN : 2492 - 3095<br/>
+                    Copyright &#169; {{ helpers.currentYear() }} {{ site.meta.name }}<br/>
+                    <a href="/mentions-legales/">Mentions légales</a> et <a href="/politique-confidentialite/">politique de confidentialité</a>.
+                    </p>
+                </div>
+                <div class="footer-informations-top">
+                    <a id="back-to-top" class="force-link" href="#top">
+                    {% svg 'arrow-up' %}
+                    Haut de page</a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

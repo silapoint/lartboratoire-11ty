@@ -1,0 +1,105 @@
+/* FORM */
+#comments {
+  contain: content;
+  
+  .comments {
+    &-title {
+      margin-bottom: $slightspace;
+      // else, it overflows on small screens
+      word-break: break-all;
+    }
+
+    &-cta {
+      font-family: $mainfont;
+      font-size: $halfspace;
+      margin-bottom: $minimalspace;
+    }
+
+    &-fields {
+      padding-left: 5%;
+      padding-right: 5%;
+      display: grid;
+    }
+  } // .comments
+
+  .comments-instructions, #connectedas {
+    font-size: $minimalspace;
+  }
+
+  #comment-author, #comment-email, #comment-url {
+      margin-bottom: $halfspace;
+      max-width: 30rem;
+  }
+
+  #comment-content {
+    min-height: 12vh;
+    // else, it overflows on small screens
+    width: 100%;
+  }
+
+  #comment-form-submit {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+} // #comments
+
+
+/* COMMENTS THEMSELVES */
+.comments {
+  &-read {
+    font-size: $halfspace;
+    font-family: $mainfont;
+  }
+
+  &-content {
+    .comment {
+      &-author {
+        margin-bottom:$minimalspace;
+        // resetting the h2 styles:
+        font-size: $slightspace;
+        font-family: $secondaryfont;
+        font-weight: initial;
+
+        &-link {
+          font-weight: bold;
+        }
+      }
+
+      &-content {
+        padding: 0 2%;
+        margin-bottom: $basespace;
+      }
+
+      &-content p, .text-error {
+        margin: 0;
+      }
+
+      &-link {
+        opacity: 0;
+        color: $maincolor;
+        font-weight: bold;
+      }
+
+      &:hover {
+        .comment-link {
+          opacity: 1;
+        }
+      }
+    } // .comment
+
+    .sub-comments {
+      padding: 0 5%;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: $dark;
+        width: 1px;
+        height: 100%;
+        left: 7%; // 5% (base) + 2% (bonus padding for comments' content)
+        top: 0;
+      }
+    }
+  }
+}

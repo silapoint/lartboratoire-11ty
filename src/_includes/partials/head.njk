@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    lang="{{ site.meta.lang }}"
+    dir="ltr"
+    class="smooth-scroll">
+
+    <!-- Hello there ; this code is open source, have a look: https://gitlab.com/lartboratoire/ -->
+
+{% set context = context | default('default') %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if title %}{{ title }} | {{ site.meta.name }}{% else %}{{ site.meta.title }}{% endif %}</title>
+
+    <noscript>
+        {# Hidding the hardcoded padding on lazy loaded images, showing the letters when JS is disabled #}
+        <style>.lazy{padding:0!important;}.lazy-iframe{display:none!important;}.letter{opacity: 1!important;}.tr-hide-wrapper{display:none!important;}
+        </style>
+    </noscript>
+
+    <link
+        rel="preload"
+        as="font"
+        type="font/woff2" crossorigin
+        href="{{ '/assets/styles/fonts/montserrat/montserrat-bold.woff2' | url }}">
+
+    <link
+        rel="preload"
+        as="font"
+        type="font/woff2" crossorigin
+        href="{{ '/assets/styles/fonts/opensans/opensans-regular.woff2' | url }}">
+    
+    {% for asset in assets.css.contexts[context] %}
+        <link href="{{ ('/assets/styles/'+ asset +'.css') | url | bust  }}" class="css-{{asset}}" as="style" rel="stylesheet">
+    {% endfor %}
+
+    {% for asset in assets.js.contexts[context] %}
+        <script src="{{ ('/assets/scripts/'+ asset +'.min.js') | url | bust }}" class="js-{{asset}}" defer="defer"></script>
+    {% endfor %}
+
+    <script>
+        {% context_var assets.css.all %};
+        {% context_var assets.js.all, true %};
+    </script>
+
+    <link rel="icon" type="image/png" href="{{ '/assets/icons/favicons/favicon-16x16.png' | url }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ '/assets/icons/favicons/favicon-32x32.png' | url }}" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ '/assets/icons/favicons/favicon-57x57.png' | url }}">
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{ site.meta.url }}feed.xml" >
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{{ site.meta.url }}atom.xml" >
+    
+    <script defer src="https://analytics.lartboratoire.fr/script.js" data-website-id="52691b08-043d-4490-9f46-2b7e60315501"></script>
+    
+    {% include 'partials/head_seo.njk' %}
+</head>
+
+
+<body>
+    <a class="a11y-hide" href="#top">Accéder directement au contenu.</a>
+
+    <div id="tr-main" aria-hidden="true"></div>
+
+        <noscript>
+            <div id="noscript" class="card">
+                <h2>L'art a parfois besoin d'un peu d'aide pour être affiché...</h2>
+                <p>Ce site fonctionne un peu mieux avec le JavaScript activé, malgré tous mes efforts pour le rendre accessible au maximum. Il ne contient aucun tracker externe, ni de publicité, promis. Si vous le souhaitez, vous pouvez le vérifier par vous-même en consultant son <a href="https://gitlab.com/lartboratoire/artboratoire-wordpress-theme" target="_blank">repo public</a>.
+                    Vous pouvez aussi visiter <a href="/politique-confidentialite/">cette page</a> pour davantage d'informations sur la politique de confidentialité mise en place.</p>
+            </div>
+        </noscript>
+
+        {% include 'partials/menu.njk' %}
+
+		<main data-barba="wrapper">
+
+        <div id="top"
+            tabindex="-1"
+            data-barba="container"
+            data-barba-namespace="{{ context }}">

@@ -1,0 +1,12 @@
+<svg class="svg-copy" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <title>Copier</title>
+  <path class="copy-base" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="copy-base" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path style="opacity: 0" class="copy-success" d="M8.79803 11.3479L11.673 14.2229L21.2564 4.63953" stroke-linecap="round" stroke-linejoin="round"/>
+  <path style="opacity: 0" class="copy-success" d="M20.298 12.3062V19.0145C20.298 19.5229 20.0961 20.0104 19.7367 20.3698C19.3772 20.7293 18.8897 20.9312 18.3814 20.9312H4.9647C4.45637 20.9312 3.96886 20.7293 3.60941 20.3698C3.24997 20.0104 3.04803 19.5229 3.04803 19.0145V5.59788C3.04803 5.08955 3.24997 4.60204 3.60941 4.24259C3.96886 3.88315 4.45637 3.68121 4.9647 3.68121H15.5064" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path style="opacity: 0" class="copy-error" d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke-linecap="round" stroke-linejoin="round"/>
+  <path style="opacity: 0" class="copy-error" d="M9 9L15 15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path style="opacity: 0" class="copy-error" d="M15 9L9 15" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

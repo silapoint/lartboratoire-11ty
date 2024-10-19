@@ -1,0 +1,27 @@
+{# only the last post of one specific tag #}
+{% if arch not in archives.excluded_from_menu %}
+    {% set current_posts = collections[ arch ] | publishedReverse %}
+    {% set solo_post = current_posts[0] %}
+    {% if solo_post %} 
+    {# 
+        1. check if current arch is in category or tag
+        2. concat to /known_archive_url/current_arch
+    #}
+        {% set name = archives[type][arch].name %}
+        <li class='item'>
+            <div class='item-wrapper'>
+                <p class='item-title'>
+                    <a class='hide-link' href="/{{ type }}/{{ arch }}" title="Catégorie : {{ name }}">{{ name }}</a>
+                </p>
+
+                <p class='item-post-title'>
+                    <a class='hide-link' href="{{ solo_post.url }}">{{ solo_post.data.title }}</a>
+                </p>
+            </div>
+            <a class='hide-link' href="{{ solo_post.url}}">
+                {% RelThumbnailBg solo_post.page, solo_post.data.thumbnail, solo_post.data.thumbnail_alt %}
+            </a>
+        </li>
+
+    {% endif %}
+{% endif %}

@@ -1,0 +1,31 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+sitemapIgnore: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in collections.all %}
+    {%- if item.data.sitemapIgnore !== true %}
+    <url>
+        <loc>{{ item.url | absoluteUrl(site.meta.url)}}</loc>
+        <lastmod>{{ item.date | toISO }}</lastmod>
+        {%- if item.templateContent %}
+            {%- set regex = r/data-src="([^"]+)"/g %}
+            {%- set matches = item.templateContent.match(regex) %} 
+            {% if matches %}
+                {% for match in matches %}
+                    {%- set imageSrc = match.match(r/data-src="([^"]+)"/)[1] %}
+                    {%- if imageSrc.startsWith(item.url) %}
+                        <image:image>
+                            <image:loc>{{ site.meta.url }}{{ imageSrc | removeFirstSlash }}</image:loc>
+                        </image:image>
+                    {%- endif %}
+                {%- endfor %}
+            {% endif %}        
+
+        {%- endif %}
+    </url>
+    {%- endif %}
+{%- endfor %}
+</urlset>

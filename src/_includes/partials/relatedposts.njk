@@ -1,0 +1,7 @@
+<section class="grid-wrapper linked-posts">
+  <h2 class="linked-posts-title">Continuez l'aventure</h2>
+  <div class="grid">
+    {% set current_posts = collections.relatedPosts(page.url, related, tags) %}
+    {% include 'partials/grid.njk' %}
+  <div>
+</section>

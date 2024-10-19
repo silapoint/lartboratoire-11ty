@@ -1,0 +1,33 @@
+---
+title: Rechercher votre bonheur (artistique)
+layout: layouts/base.njk
+permalink: /rechercher.html
+seo:
+    robots: noindex, nofollow
+context: "single"
+---
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+
+<style>
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --pagefind-ui-primary: #fbfbfb;
+      --pagefind-ui-text: #fbfbfb;
+      --pagefind-ui-background: #1f1f1f;
+      --pagefind-ui-border: #2b2b2b;
+      --pagefind-ui-tag: #2b2b2b;
+    }
+  }
+  .pagefind-ui--reset mark {
+    background: #f9bec8;
+    color: #1f1f1f;
+    }
+  </style>
+<article class="content-wrapper">
+  <div class="content" data-pagefind-body>
+    <h1>Rechercher</h1>
+    <div id="pagefind-search" class="search"></div>
+    </div>
+</article>
+

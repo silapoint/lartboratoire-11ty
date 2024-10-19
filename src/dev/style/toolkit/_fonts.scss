@@ -1,0 +1,87 @@
+/*
+  FONT FACES
+
+  Note: using a small, optmized subset (French) generated with
+  https://www.fontsquirrel.com/tools/webfont-generator
+
+  if a quick fix is ever needed, the defaults fonts are saved as
+  montserrat-bold_base.ttf and openSans-regular_base.ttf
+
+  The generator_config.txt used by FontSquirrel is also left here in the fonts'
+  directory
+*/
+@font-face {
+  font-family: 'OpS';
+  font-display: swap;
+  src: url('./fonts/opensans/opensans-regular.eot');
+  src: url('./fonts/opensans/opensans-regular.woff2') format('woff2'),
+      url('./fonts/opensans/opensans-regular.woff') format('woff'),
+      url('./fonts/opensans/opensans-regular.ttf') format('truetype'),
+      url('./fonts/opensans/opensans-regular.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Mst';
+    font-display: swap;
+    src: url('./fonts/montserrat/montserrat-bold.eot');
+    src: url('./fonts/montserrat/montserrat-bold.woff2') format('woff2'),
+        url('./fonts/montserrat/montserrat-bold.woff') format('woff'),
+        url('./fonts/montserrat/montserrat-bold.ttf') format('truetype'),
+        url('./fonts/montserrat/montserrat-bold.eot?#iefix') format('embedded-opentype');
+}
+
+h1, h2, h3, h4 {
+  font-weight: 900;
+  font-family: $mainfont;
+  letter-spacing: 0.05rem;
+}
+
+/*
+  LINKS
+*/
+a {
+  color: $white;
+  text-decoration: underline;
+  text-decoration-color: $maincolor;
+
+  &:visited {
+    color: $accessible;
+    text-decoration-color: $accessible;
+  }
+}
+
+// class used to hide links when we don't want them to appear somehow
+.hide-link {
+  color:$white;
+  text-decoration: none;
+
+  &:visited {
+    color: $white;
+  }
+}
+
+.force-link {
+  &:visited {
+    color: $white;
+    text-decoration-color: $maincolor;
+  }
+}
+
+/*
+  COLORING STUFF
+*/
+.highlight, .highlight a, .highlight a:visited {
+  color: $maincolor;
+}
+
+.text-error {
+  color: $error;
+}
+
+.text-success {
+  color: $success;
+}
+
+.email {
+  word-break: break-all;
+}

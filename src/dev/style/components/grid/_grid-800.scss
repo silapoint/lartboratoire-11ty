@@ -1,0 +1,19 @@
+.grid {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+
+
+.card-popup-wrapper {
+  align-items: center;
+}
+
+.card-popup {
+  // if changing this, check scripts/components/popup/animations.js
+  // because the breakpoint is used a difference between animations
+  width: 90%;
+  max-width: 28.5rem;
+  margin-left: 5%;
+  margin-right: 5%;
+}

@@ -1,0 +1,67 @@
+/*
+  Font families
+*/
+$mainfont:       "Mst", sans-serif;
+$secondaryfont:  "OpS", sans-serif;
+
+/*
+  Color palette
+*/
+$background:     #1F1F1F; // if changed, check critital-path.php
+$dark:           #2B2B2B;
+$medium :        #4A4A4A;
+$accessible:     #B0B0B0;
+
+$maincolor:      #F9BEC8; // Used for images #ca9ba3
+
+$white:          #FBFBFB; // if changed, check critital-path.php
+
+$error:          #FF5C5C;
+$success:        #7FE48F;
+
+/*
+  Depth positionning (z-index)
+*/
+$blackhole: 99999;
+$space:     9999;
+$cloud:     999; // this index is used in the menu's animation in JS
+$bird:      99;
+$kite:      42;
+$tree:      9;
+$cat:       3;
+$grass:     1;
+$ground:    0;
+$worm:     -1;
+
+/*
+  S P A C E S
+*/
+$minimalspace: 1rem;
+$slightspace:  1.2rem;
+$halfspace:    1.5rem;
+$basespace:    2rem;
+$mediumspace:  2.5rem;
+$menuheight:   3rem; // change the $fullwithoutmenu too!
+$largespace:   3.5rem;
+$extralargespace: 5rem;
+
+$smallborder:  1px;
+$largeborder:  2px;
+$xlargeborder: 3px;
+$cardborder: 2px solid rgba(0, 0, 0, 0.25);
+
+
+$fullwithoutmenu: calc(100vh - 3rem);
+
+$maxcontentwidth: 1980px;
+$readablemaxwidth: 58rem;
+
+/*
+  Shadows
+*/
+$hardbottomshadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+// note: the $hardleftshadow is also used for the menu's animations in JS
+// don't forget to update it there too
+$hardleftshadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+
+$cardshadowhover: 3px 6px 8px rgba(0, 0, 0, 0.25);

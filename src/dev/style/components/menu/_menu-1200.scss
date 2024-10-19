@@ -1,0 +1,69 @@
+#menu-button {
+  display: none;
+}
+
+.menu {
+  // on a big screen, the opened cards blend with the horizontal nav
+  z-index: $cloud;
+}
+
+#main-menu {
+  top: 0;
+  right: 0;
+  transform: translateX(0);
+  height: $menuheight;
+  width: 60%;
+  min-width: 900px;
+  overflow: hidden;
+  padding: 0;
+  z-index: $cloud;
+  box-shadow: none;
+  text-align: right;
+
+  .item {
+    display: inline;
+    margin: 0;
+    padding: 0 $basespace;
+    font-weight: initial;
+    font-family: $secondaryfont;
+    font-size: 1rem;
+
+    &:after {
+      content: none;
+    }
+
+    #item-get-involved {
+      text-decoration-thickness: $largeborder;
+    }
+  }
+}
+
+.menu-card, #search-card {
+  max-width: 900px;
+  padding: $basespace 5rem;
+}
+
+#search-card {
+  height: auto;
+
+  .menu-card-description {
+    grid-template-columns: 4rem 1fr;
+  }
+
+  #menu-search-form {
+    display: grid;
+    grid-template-columns: 1fr 9rem;
+  }
+
+  #search-input {
+    margin: 0;
+    grid-row: 1;
+  }
+
+  #search-submit {
+    justify-content: end;
+    margin: 0;
+    font-size: $slightspace;
+    text-align: right;
+  }
+}

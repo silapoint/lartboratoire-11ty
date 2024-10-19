@@ -1,0 +1,10 @@
+{% set actual_page_number = current_pagination.pageNumber + 1 %}
+{% set post_num_low = (actual_page_number-1) * 10 %}
+{% set post_num_high = (actual_page_number-1) * 10 + 10 %}
+
+{% if actual_page_number < 10 %}
+  {% set actual_page_number = '0' ~ actual_page_number %}
+{% endif %}
+
+<p class="full-header-num">Page {{ actual_page_number }}</p>
+<p class="full-header-count">{{ post_num_low ~ ' - ' ~ post_num_high}}</p>

@@ -1,0 +1,33 @@
+{% set sharing_url = page.url | absoluteUrl(site.meta.url) %}
+{# We want the absolute, actual path of the thumbnail, not the one where it is store on the FS. #}
+{% set thumbnail_clean = thumbnail | replace('img/', '') %} 
+{% set thumbnail_url = page.url | absoluteUrl(site.meta.url) ~ thumbnail_clean %}
+<div class="card-popup-wrapper">
+  <div class="card card-popup card-sharing">
+    {% svg 'cross' %}
+    <ul class="card-popup-content card-list">
+      <li class="card-list-item">
+        {% svg 'social/facebook' %}
+        <a href="https://www.facebook.com/sharer.php?u={{ sharing_url }}&t={{ title }} "
+           rel="noreferrer" target="_blank" title="Partager l'article sur Facebook"
+           class="card-list-item-content hide-link">Facebook</a>
+      </li>
+      <li class="card-list-item">
+        {% svg 'social/twitter' %}
+        <a href="https://twitter.com/intent/tweet?text={{ title }} &url={{ sharing_url }}&via=artboratoire"
+           rel="noreferrer" target="_blank" title="Partager l'article sur Twitter"
+           class="card-list-item-content hide-link">X/Twitter</a>
+      </li>
+      <li class="card-list-item">
+        {% svg 'social/pinterest' %}
+        <a href="https://pinterest.fr/pin/create/link/?url={{ sharing_url }}&description={{ title }} +via+l'artboratoire&media={{ thumbnail_url }}"
+           rel="noreferrer" target="_blank" title="Partager l'article sur Pinterest"
+           class="card-list-item-content hide-link">Pinterest</a>
+      </li>
+      <li class="card-list-item">
+        {% svg 'copy' %}
+        <input id="sharing-copy-link" class="card-list-item-content card-list-item-input" type="text" value="{{ sharing_url }}">
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+input, textarea {
+  line-height: $basespace;
+  margin-bottom: $minimalspace;
+  border:none;
+  border-bottom: $smallborder solid $dark;
+  background-color: $background;
+  color: $white;
+  font-family: $secondaryfont;
+
+  &:focus {
+    border-bottom: $smallborder solid $maincolor;
+  }
+
+  &:focus:valid {
+    border-bottom: $smallborder solid $success;
+  }
+
+  &:focus:invalid {
+    border-bottom: $smallborder solid $error;
+  }
+}
+
+button, input[type="submit"],
+.btn, .btn .hide-link, .btn.hide-link:visited {
+  font-family: $mainfont;
+  color: $maincolor;
+  background-color: $background;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.btn-inactive {
+  cursor: not-allowed;
+}
+
+button .hide-link, button .hide-link:visited  {
+  text-decoration: none;
+  color: inherit; // inhereting from button
+}

@@ -1,0 +1,158 @@
+.menu, .menu-card {
+  position: fixed;
+  width: 100%;
+  background-color: $background;
+}
+
+.menu {
+  top: 0;
+  // allowing the menu to grow if the screen is really smol
+  min-height: $menuheight;
+  // making sure it's above anything else when growing
+  z-index: $space;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $hardbottomshadow;
+}
+
+#logo, #menu-button {
+  padding: 0 5%;
+  line-height: $menuheight;
+}
+
+#logo {
+  font-size: 6vw;
+}
+
+#menu-button {
+  color: $white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: right;
+
+  .open {
+    color: $maincolor;
+  }
+
+  &:hover {
+    color: $maincolor;
+  }
+}
+
+/* CARDS / SUBMENUS */
+.menu-card {
+  overflow: auto;
+  transform: translateX(100%);
+  right: 0;
+  top: $menuheight;
+  height: $fullwithoutmenu;
+  padding: $basespace 10%;
+  align-items: start;
+  box-shadow: $hardleftshadow;
+  display: grid;
+  z-index: $cloud;
+
+  &-description {
+    display: grid;
+    font-size: 1.7rem;
+    text-align: right;
+    padding-bottom: $menuheight; // same as .menu-card
+  }
+
+  .svg-cross {
+    grid-row: 1;
+    align-self: auto;
+    width: $basespace;
+    height: $basespace;
+    stroke: $white;
+    cursor: pointer;
+  }
+
+  &-description-text {
+    grid-row: 1;
+  }
+
+  .item {
+    font-size: 1.7rem;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: $minimalspace;
+    margin-bottom: $menuheight;
+    cursor: pointer; // if it's not a link
+    list-style: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $smallborder;
+      background-color: $dark;
+    }
+
+    &-post {
+      &-title {
+        font-family: $secondaryfont;
+        font-size: $minimalspace;
+        font-weight: initial;
+        padding: 0.5rem 0;
+      }
+
+      &-img {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  #search-input {
+    width: 100%;
+  }
+} // .menu-card
+
+#main-menu {
+  align-items: center;
+}
+
+#categories-card,
+#themes-card,
+#informations-card,
+#search-card {
+  // to reduce the initial painting
+  display: none;
+}
+
+#search-card {
+  .menu-card-description {
+      height: 100%;
+      padding: 0;
+  }
+
+  .svg-cross {
+    align-self: start;
+  }
+
+  #search-input {
+    font-size: $minimalspace; // gotta reset it for some reason
+  }
+
+  #search-submit {
+    font-size: $minimalspace;
+  }
+}
+
+
+/* -------------
+  State specific
+------------- */
+.menu--open {
+  #menu-button {
+    color: $maincolor;
+  }
+}

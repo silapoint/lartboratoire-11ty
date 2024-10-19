@@ -1,0 +1,5 @@
+<svg class="video-icon" width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <title>Vidéo</title>
+  <path d="M50.0295 91.25C72.8112 91.25 91.2795 72.7818 91.2795 50C91.2795 27.2183 72.8112 8.75 50.0295 8.75C27.2477 8.75 8.77948 27.2183 8.77948 50C8.77948 72.7818 27.2477 91.25 50.0295 91.25Z" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41.7795 33.5L66.5295 50L41.7795 66.5V33.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

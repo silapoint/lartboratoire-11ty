@@ -1,0 +1,55 @@
+@import '../../toolkit/variables';
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  max-width: $maxcontentwidth;
+  width: 100%;
+  padding: $menuheight 5%;
+  margin: auto;
+  
+  &-link {
+    display: flex;
+    align-items: center;
+
+    &-nopost {
+      .pagination-link-text, .arrow-up {
+        color: $medium;
+        stroke: $medium;
+      }
+    }
+
+    &-previous {
+      .arrow-up {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &-next {
+      justify-content: end;
+      text-align: right; // Chrome
+
+      .arrow-up {
+        transform: rotate(90deg);
+      }
+    }
+
+    .hide-link {
+      display: inherit; // flex
+      align-items: inherit; // center
+      justify-content: inherit;
+      width: 100%;
+    }
+
+    .pagination-link-text {
+      width: 100%; // Chrome
+      padding: 0 2%;
+    }
+  } // .pagination-link
+
+  .arrow-up {
+    fill: none;
+    stroke-width: 2px;
+  }
+}

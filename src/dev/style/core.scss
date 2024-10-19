@@ -1,0 +1,54 @@
+/*
+  The core SCSS file. Loaded by default on every single page.
+
+  It's supposed to stay as clean as possible, with only impports from the
+  various components / modules
+*/
+
+@import 'toolkit/variables';
+@import 'toolkit/reset';
+@import 'toolkit/fonts';
+@import 'toolkit/a11y';
+
+@import 'components/menu/menu';
+@import 'components/svg';
+@import 'components/form';
+@import 'components/lazy';
+@import 'components/grid/grid';
+@import 'components/footer/footer';
+@import 'components/transitions';
+
+
+/*
+  Base elements
+*/
+body {
+  background-color: $background;
+  color: $white;
+  font-family: $mainfont;
+}
+
+#top {
+  margin-top: $menuheight;
+}
+
+
+@media screen and (min-width:500px){
+  @import 'components/menu/menu-500';
+  @import 'components/footer/footer-500';
+}
+
+
+@media screen and (min-width:800px){
+  @import 'components/menu/menu-800';
+  @import 'components/grid/grid-800';
+  @import 'components/footer/footer-800';
+
+}
+
+
+@media screen and (min-width:1200px){
+  @import 'components/menu/menu-1200';
+  @import 'components/grid/grid-1200';
+
+}

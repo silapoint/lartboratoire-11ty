@@ -1,0 +1,29 @@
+---
+title: 404 - art non trouvé
+layout: layouts/base.njk
+context: "404"
+404_image: "img/404-lartboratoire.webp"
+404_image_alt: "Le Penseur de Rodin réfléchissant sur sa condition, filtre rose pastel"
+eleventyExcludeFromCollections: true
+permalink: /404.html
+--- 
+
+{% set imageData = 404_image | transformImage(true) %}
+
+<article class="error-content-wrapper">
+  <div class="error-content">
+    <h1 class="error-title"><span class="error-title-line highlight"><span class="letter">4</span><span class="letter">0</span><span class="letter">4</span></span> <span class="error-title-line"><span class="letter">a</span><span class="letter">r</span><span class="letter">t</span></span> <span class="error-title-line"><span class="letter">i</span><span class="letter">n</span><span class="letter">c</span><span class="letter">o</span><span class="letter">n</span><span class="letter">n</span><span class="letter">u</span></span></h1>
+
+    <div class="tr-hide-wrapper" aria-hidden="true">
+      <div class="tr-hide"></div>
+    </div>
+
+    <img class="error-img"
+        src="{{ imageData.metadata.mainImage.url }}"
+        srcset="{{ imageData.metadata.srcset }}"
+        sizes="100vw"
+        alt="{{ 404_image_alt }}" />
+  </div>
+  <p class="error-subtitle">Nous avons longtemps cherché, mais rien n'a été trouvé.</p>
+  <p class="error-return"><a class="force-link" href="/">Retour à l'accueil</a></p>
+</article>

@@ -1,0 +1,82 @@
+@import '../../toolkit/variables';
+
+.error-content-wrapper {
+  max-width: $maxcontentwidth;
+  min-height: 95vh;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 5vh 5%;
+  overflow: hidden;
+}
+
+.error-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.error {
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &-title {
+    grid-row: 1/4;
+    grid-column: 1/3;
+    padding-left: 5%;
+    font-size: 9.5vw;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px $white;
+    letter-spacing: $slightspace;
+    justify-self: start;
+    z-index: $cat;
+
+    &-line {
+      display: block;
+    }
+
+    .highlight {
+      -webkit-text-fill-color: $maincolor;
+      -webkit-text-stroke: transparent;
+    }
+
+    .letter {
+      opacity: 0;
+      display: inline-block;
+    }
+  }
+
+  &-img {
+    grid-row: 1;
+    grid-column: 2;
+    max-height: 90vh;
+    width: auto;
+  }
+
+  &-subtitle, &-return {
+    text-align: center;
+  }
+
+  &-subtitle {
+    padding: 5vh 5%;
+    font-size: $halfspace;
+  }
+
+  &-return {
+    font-family: $secondaryfont;
+  }
+}
+
+.appeared .letter {
+  opacity: 1 !important;
+}
+
+@media screen and (min-width:800px){
+  @import '404-800';
+}

@@ -1,0 +1,9 @@
+footer {
+  .footer-informations{
+    justify-content: space-between;
+
+    &-top {
+      padding: $basespace 0 0 $basespace;
+    }
+  }
+}

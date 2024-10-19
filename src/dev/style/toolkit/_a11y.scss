@@ -1,0 +1,30 @@
+#noscript {
+  margin-top: $menuheight;
+  padding: 5%;
+}
+
+.a11y-hide {
+  position: absolute;
+  left: -999em;
+}
+
+[hidden] {
+  display: none;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smooth-scroll {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

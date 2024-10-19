@@ -1,0 +1,14 @@
+{% set templateDir = 'partials/cards/' %}
+
+
+{% if i == 0 %}
+  {% include templateDir ~ 'art-artists.njk' %}
+{% elif i == 2 %}
+  {% include templateDir ~ 'themes-techniques.njk' %}
+{% elif i == 4 %}
+  {% include templateDir ~ 'participate.njk' %}
+{% elif i == 8 %}
+  {% include templateDir ~ 'random.njk' %}
+{% else %}
+  {# No action for default case #}
+{% endif %}

@@ -1,0 +1,15 @@
+{% set templateDir = 'partials/cards/' %}
+
+{% if i == 0 %}
+    {# The following is extremely hacky, but it's the only way 
+    to include a template containing an asynchronous shorter code 
+    or filter with nunjucks
+    Related: https://github.com/11ty/eleventy/issues/2088 #}
+
+    {% set tmp_arr = [0] %}
+    {% asyncEach tmp  in tmp_arr %}
+      {% include templateDir ~ 'author.njk' %}
+    {% endeach %}
+{% elif i == 2 %}
+    {% include templateDir ~ 'participate.njk' %} 
+{% endif %}

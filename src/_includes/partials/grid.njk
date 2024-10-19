@@ -1,0 +1,23 @@
+
+{% include 'partials/grids/front-page-switch.njk' %}    
+{% set i = 0 %}
+{% if current_posts.length > 0 %}
+  {% asyncEach post  in current_posts %}
+    {% if page.fileSlug == "home" %}
+      {% include 'partials/grids/front-page-switch.njk' %}
+    {% elif 'author' in page.url %}
+      {% include 'partials/grids/author-switch.njk' %}
+    {% else %}
+      {% include 'partials/grids/default-switch.njk' %}
+    {% endif %}
+
+    {% include 'partials/cards/base.njk' %}
+
+    {% set i = i + 1 %}
+  {% endeach %}
+{% else %}
+  <div class="card">
+    <h2 class="card-title">Rah, mince !</h2>
+    <p class="card-text">Ce que vous cherchez ne se trouve pas ici, navré. <a class="force-link" href="{{ '/' | url }}">Retour à l'accueil</a>.</p>
+  </div>
+{% endif %}

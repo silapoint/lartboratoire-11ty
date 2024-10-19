@@ -1,0 +1,47 @@
+footer {
+  contain: content;
+  padding: $menuheight 10%;
+  font-family: $secondaryfont;
+
+  .footer-social {
+    padding-bottom: $minimalspace; // $minimalspace + $minimalspace = $basespace
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: $largeborder solid $dark;
+
+    &-wrapper {
+      display: flex;
+    }
+
+    &-icon {
+      padding: $minimalspace $slightspace;
+    }
+  }
+
+  .footer-informations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: $basespace;
+    word-wrap: break-word;
+
+    &-top {
+      padding-top: $basespace;
+      font-family: $mainfont;
+      font-size: $slightspace;
+    }
+  }
+
+  #back-to-top {
+    display: grid;
+    text-align: center;
+  }
+
+  .arrow-up {
+    fill: none;
+    stroke-width: $largeborder;
+    justify-self: center;
+    margin-bottom: $minimalspace;
+  }
+}

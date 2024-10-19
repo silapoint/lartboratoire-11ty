@@ -1,0 +1,44 @@
+{% set current_authors_array = authors | getAuthors(authorPosts.authorKey) %}
+{# The filter returns an array of authors. In practice, here, we have  only 1 author #}
+{% set current_author = current_authors_array[0] %}
+
+{% if current_author %}
+<article class="card">
+    <figure>
+        {% set imageData = current_author.avatar | transformImage(true, true, [150, 300, 400]) %}
+        <img
+        class="card-img"
+        src="/{{ imageData.metadata.mainImage.url }}"
+        srcset="{{ imageData.metadata.srcset }}"
+        sizes="(min-width: 800px) 500px, 100vw"
+        alt="Avatar de {{ current_author.name }}" />
+
+        <figcaption>
+            <h1 class="card-big-title">{{ current_author.name }}</h1>
+            <p class="card-text">{{ authorPosts.nbPosts }} articles, depuis {{ current_author.date }} </p>
+        </figcaption>
+    </figure>
+
+    {% if current_author.desc %}
+    <h2 class="card-title">Présentation</h2>
+    {% for paragraph in current_author.desc %}
+        <p class="card-text">{{ paragraph | safe }}</p>
+    {% endfor%}
+    {% endif %}
+
+    {% if current_author.links %}
+        <h2 class="card-title">Ailleurs sur Internet</h2>
+        <ul class="card-list">
+            {% for link_name, link_url in current_author.links %}
+            <li class="card-list-item">
+                <a class="hide-link"
+                    href="{{ link_url }}"
+                    rel="nofollow" target="_blank" title="Accéder à : {{ link_name}}">
+                    {{ link_name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</article>
+{% endif %}
