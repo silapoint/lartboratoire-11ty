@@ -7,7 +7,7 @@ Dans un effort de protection de vos données et de votre vie privée, l'artborat
 [[toc]]
 
 ## Hébergement et services
-- L'artboratoire est hébergé via [Gitlab](https://about.gitlab.com/privacy/).
+- L'artboratoire est hébergé via [GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection).
 - L'artboratoire collecte des données de navigation via le logiciel auto-hébergé [Umami](https://github.com/umami-software/umami).
 
 ## Données collectées 
@@ -20,12 +20,8 @@ Afin d'aide l'administration du site (par exemple : repérer les pages manquant 
 
 Les données de navigation uniques sont effacées après 3 mois. Sont conservés les rapports hebdomadaires / mensuels / annuels comportant les données agregées.
 
-### Gitlab
-En plus de ces informations, [Gitab](https://about.gitlab.com/privacy) collecte davantage de données en sa qualité d'hébergeur (auxquelles l'administrateur de lartboratoire.fr n'a pas accès, sauf si spécifiées précédemment) :
-
-> When you visit our Websites, we automatically log information about how you interact with the sites, such as the referring site, date and time of visit, and the pages you have viewed or links you have clicked. For our Websites, GitLab uses session replay, which captures a de-identified log of the marketing Websites that you visit.
->
-> -- [Privacy Policy](https://about.gitlab.com/privacy), consultée le 18 octobre 2024.
+### GitHub
+En plus de ces informations, [Gitab](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection) collecte davantage de données en sa qualité d'hébergeur (auxquelles l'administrateur de lartboratoire.fr n'a pas accès, sauf si spécifiées précédemment), telle que l'adresse IP de visite. 
 
 ### Note sur les contenus embarqués
 Bien que l'intégration de services tiers dans les articles de l'artboratoire soit sporadique et potentiellement évitée, il est possible que l'ajout d'une playlist Soundcloud, d'un tweet ou d'une vidéo Youtube entraîne l'enregistrement de données de leur part. L'artboratoire n'a aucun contrôle sur ce comportement.
