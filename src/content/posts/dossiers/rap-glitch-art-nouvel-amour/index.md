@@ -2,7 +2,7 @@
 title: "Rap et glitch art : un nouvel amour"
 published: "2018-12-03"
 author: "lartboratoire"
-thumbnail: "img/tengo_john_olb.jpg"
+thumbnail: "img/tengo_john_olb_fixed.jpg"
 thumbnail_alt: "Glitch art : Tengo John – OLB, réalisation Neto Firmino"
 seo:
     desc: "Quel est lien entre rap et glitch art ? Comment les artistes l'utilisent-ils ? Et plein d'autres de questions auxquelles nous allons répondre !"
@@ -107,7 +107,7 @@ Enfin, on peut se servir de ces effets pour créer, ou accompagner, une atmosph�
 
 {% Figure "img/keny_arkana_madame_la_marquise.gif", "Keny Arkana – Madame La Marquise, réalisation Jérémi Durand", "<a href='https://youtu.be/FpQI1ARQTQk' target='_blank' rel='noopener'>Keny Arkana – Madame La Marquise</a>, réalisation Jérémi Durand" %}
 
-{% Figure "img/tengo_john_olb.jpg", "Tengo John – OLB (feat. Cinco), réalisation Neto Firmino", "<a href='https://youtu.be/d6wU6Bclzk4' target='_blank' rel='noopener'>Tengo John – OLB (feat. Cinco)</a>, réalisation Neto Firmino" %}
+{% Figure "img/tengo_john_olb_fixed.jpg", "Tengo John – OLB (feat. Cinco), réalisation Neto Firmino", "<a href='https://youtu.be/d6wU6Bclzk4' target='_blank' rel='noopener'>Tengo John – OLB (feat. Cinco)</a>, réalisation Neto Firmino" %}
 
 {% Figure "img/sianna_traumatiser.gif", "Sianna – Traumatiser, réalisation ?", "<a href='https://youtu.be/yv4O6nQ8JjE' target='_blank' rel='noopener'>Sianna – Traumatiser</a>, réalisation ?" %}
 
