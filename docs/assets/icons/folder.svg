@@ -1,0 +1,9 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <title>Répertoire</title>
+  <path
+    d="M91.6667 79.1667C91.6667 81.3768 90.7887 83.4964 89.2259 85.0592C87.6631 86.622 85.5435 87.5 83.3333 87.5H16.6666C14.4565 87.5 12.3369 86.622 10.7741 85.0592C9.21129 83.4964 8.33331 81.3768 8.33331 79.1667V20.8333C8.33331 18.6232 9.21129 16.5036 10.7741 14.9408C12.3369 13.378 14.4565 12.5 16.6666 12.5H37.5L45.8333 25H83.3333C85.5435 25 87.6631 25.878 89.2259 27.4408C90.7887 29.0036 91.6667 31.1232 91.6667 33.3333V79.1667Z"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+  <path class="svg-anim" d="M50 45.8334V70.8334" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="svg-anim" d="M37.5 58.3334H62.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

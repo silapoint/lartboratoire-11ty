@@ -1,0 +1,5 @@
+
+Sitemap: https://lartboratoire.fr/sitemap.xml
+
+User-agent: *
+Disallow:
