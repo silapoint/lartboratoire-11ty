@@ -191,4 +191,4 @@ La prochaine fois que vous visiterez une exposition d'art contemporain, rappelez
 
 [^9]: Créations réalisées par des artistes de moins de 40 ans.
 
-[^10]: La querelle de l’art contemporain - Marc Jimenez (2005) - Gallimard, coll.Essais [doi.org/10.4000/questionsdecommunication.5719](https://journals.openedition.org/questionsdecommunication/5719).
+[^10]: La querelle de l’art contemporain - Marc Jimenez (2005) - Gallimard, coll.Essais <a href="https://journals.openedition.org/questionsdecommunication/5719" target="_blank" class="email">doi.org/10.4000/questionsdecommunication.5719</a>.
