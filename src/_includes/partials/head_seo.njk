@@ -1,7 +1,20 @@
 {% if seo and seo.desc %}
     {% set desc = seo.desc %}
 {% else %}
-    {% set desc = site.meta.desc %}
+    {% if authorPosts %}
+        {% set current_authors_array = authors | getAuthors(authorPosts.authorKey) %}
+        {# The filter returns an array of authors. In practice, here, we have  only 1 author #}
+        {% set current_author = current_authors_array[0] %}
+        {% set desc = "Page personnelle regroupant les articles de : " ~ current_author.name %}
+    {% elif tag %}
+        {% if archives.all[tag.tagName].metadesc %}
+            {% set desc = archives.all[tag.tagName].metadesc %}
+        {% else %}
+            {% set desc = archives.all[tag.tagName].desc[0] %}
+        {% endif %}
+    {% else %}
+        {% set desc = site.meta.desc %}
+    {% endif %}
 {% endif %}
 
 {% if title %}

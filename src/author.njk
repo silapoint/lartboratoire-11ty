@@ -8,6 +8,8 @@ pagination:
 permalink: /author/{{ authorPosts.authorKey }}/{% if authorPosts.pageNumber %}page/{{ authorPosts.pageNumber + 1 }}/{% endif %}
 ---
 
+
+
 {% set current_pagination = authorPosts %}
 {% set current_pagination_key = authorPosts.authorKey %}
 

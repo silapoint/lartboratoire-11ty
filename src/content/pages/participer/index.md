@@ -79,7 +79,7 @@ Bien sûr !
 - Un article sur le [Street Art à Rodez](/street-art-grand-rodez-pierre-soulages/), par DarkVador ;
 - Un article sur le [rapport entre art (contemporain) et politique](/controverses-art-politique-duo-inseparable/), par Hanna Thevenet ; 
 - Une interview du [photographe Frédéric Boldrini](/frederic-boldrini-entretien-photographe/), par Maëliss Courtois ;
-- Un article plus classique / curiosité au sujet de [Ruslan Khasanov](/bulles-colorees-ruslan-khasanov/), par Marnie.
+- Un article plus classique / curiosité au sujet de [Ruslan Khasanov](/bulles-colorees-ruslan-khasanov/), par Marnie ;
 - Un article écrit par une artiste elle-même : [Découverte de l’art polarisant avec Anne-Lise King](art-polarisant-anne-lise-king) ;
 - ... et bientôt, le vôtre ?
 

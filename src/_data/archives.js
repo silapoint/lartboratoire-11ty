@@ -32,6 +32,7 @@ let allCats = {
         "desc": [
             "Que vous soyez amateur ou artiste professionnel, voici quelques humbles conseils, astuces et autres informations utiles pour votre activité. Sortez les pinceaux, préparez les objectifs, dans cette catégorie <strong>vous</strong> êtes à l'honneur !"
         ],
+        "metadesc": "Que vous soyez amateur ou artiste professionnel, voici quelques humbles conseils, astuces et autres informations utiles pour votre activité.",
         "image": "img/taxonomies/Coin-des-artistes-lartboratoire.webp",
         "alt":"Pots de peinture ouverts sur un drap, filtre rose pastel sur l'ensemble de l'image.",
         "cred": ""
@@ -42,6 +43,7 @@ let allCats = {
             "Découvrir des artistes et leurs œuvres d'art, ça vous tente ? Ne cherchez plus, vous êtes au bon endroit : bienvenue dans les Découvertes Artistiques !",
             "Dans chaque article, un ensemble de créations est mis sous les feux de la rampe et la technique utilisée est présentée, que cela soit de la peinture (à l'huile, à l'eau ou à l'escargot tout chaud), de la photographie, de la sculpture, de la broderie, à l'ordinateur ou avec des brindilles, avec les doigts ou au fusain… Vous devriez trouver de quoi vous plaire !",
         ],
+        "metadesc": "Découvrir des artistes et leurs œuvres d'art, ça vous tente ? Ne cherchez plus, vous êtes au bon endroit : bienvenue dans les Découvertes Artistiques !",
         "image": "img/taxonomies/Découvertes-artistiques-Aenami.webp",
         "alt":"Illustration d'Alena Aenami",
         "cred": "<a href='/alena-aenami-digital-painting-contemplatif/'>Alena Aenami</a>"
@@ -64,6 +66,7 @@ let allCats = {
             → <a href='/origami-science-art/'>l'origami</a> ;<br>\
             → <a href='/art-fractales-decouverte-monde/'>les fractales</a>."
         ],
+        "metadesc": "Les dossiers (in)complets tentent de présenter un thème artistique en observant une approche à la fois historique et technique, avec une humble analyse des œuvres.",
         "image": "img/taxonomies/Shadow-Art-dossier-artistique.webp",
         "alt":"Shadow art par Kumi Yamashita, point d'exclamation dont l'ombre forme un point d'interrogation ; filtre rose pastel sur l'ensemble de l'image.",
         "cred": '<a href="/shadow-art-ombre-lumiere/">Kumi Yamashita</a>'
@@ -74,6 +77,7 @@ let allCats = {
             "Musique électronique et alternative ; deux vastes thèmes qu'explore HyacinthAorchis dans cette série d'articles. Proposant une analyse technique et émotionnelle des créations musicales complexes, cet aventurier touche-à-tout aura sûrement de quoi vous intéresser dans ses bagages.",
             "Au-delà des deux genres principaux, laissez-vous porter par les sons et les artistes venus de tout horizons au gré des playlists savamment concoctées !"
         ],
+        "metadesc": "Musique électronique et alternative ; deux vastes thèmes qu'explore HyacinthAorchis dans cette série d'articles",
         "image": "img/taxonomies/Acupressure-Shine-HyacinthAorchis.webp",
         "alt":"Jeune fille regardant vers la droite, image glitchée, filtre rose pastel sur l'ensemble de l'image.",
         "cred": '<a href="/author/hyacinthaorchis/">HyacinthAorchis</a>'
@@ -81,8 +85,9 @@ let allCats = {
     "translated": {
         "name": "Translated",
         "desc": [
-            "You may find translated articles from the main french feed here. Please excuse the broken english and don't hesitate to report any grammar mistake you may come across; I'm eager to learn!"
+            "You will find translated articles from the main french feed here. Please excuse the broken english and don't hesitate to report any grammar mistake you may come across; I'm eager to learn!"
         ],
+        "metadesc": "Translated content from french to english.",
         "image": "img/taxonomies/Kyle_T_Webster.webp",
         "alt":"Grenouille sur un grand bi, portant un bérêt, baguette sous le bras.",
         "cred": '<a href="http://www.kyletwebster.com/" rel="nofollow" target="_blank">Kyle T. Webster</a>'
@@ -123,6 +128,7 @@ let allTags = {
         "desc": [
             "Laissez-vous surprendre par des œuvres étonnantes, sortant des sentiers battus artistiques ! Les œuvres d'art sont parfois indéfinissables, inclassables, trop étonnantes pour entrer dans des cases et des catégories… L'art insolite ne se limite pas aux tableaux à bordures dorées que l'on trouve dans les musées ; il jaillit dans les rues, sur les toits, qu'importe la forme pourvu que l'artiste laisse parler sa créativité…",
         ],
+        "metadsec": "Laissez-vous surprendre par des œuvres étonnantes, sortant des sentiers battus artistiques !",
         "image": "img/taxonomies/RGB-Carnovsky-art-insolite.webp",
         "alt":"Oeuvre par Carnovsky, filtre rose pastel sur l'ensemble de l'image.",
         "cred": '<a href="/rgb-carnovsky-oeuvres-couleurs/">Carnovsky</a>'
@@ -132,6 +138,7 @@ let allTags = {
         "desc": [
             "Le concept art : un vaste domaine allant du film au jeu vidéo, en passant par l'animation ou la bande dessinée. Représenter un univers avec des croquis ou des illustrations est une tâche ardue… Heureusement, les artistes présentés ici s'y adonnent avec brio !",
         ],
+        "metadesc": "Le concept art : un vaste domaine allant du film au jeu vidéo, en passant par l'animation ou la bande dessinée.",
         "image": "img/taxonomies/The-Reader-Charlie-Bowater.webp",
         "alt":"Illustration par Charlie Bowater, filtre rose pastel sur l'ensemble de l'image.",
         "cred": '<a href="/charlie-bowater-personnages-fantastiques/">Charlie Bowater</a>'
@@ -141,6 +148,7 @@ let allTags = {
         "desc": [
             "Le design graphique (graphic design en anglais) est une discipline artistique et/ou artisanale permettant de communiquer une information. Les créateurs mis en avant ici utilisent la typographie, la couleur ou encore la photographie intelligemment… Pour le plus grand plaisir de nos mirettes !",
         ],
+        "metadesc": "Tout sur le design graphique (graphic design en anglais), large discipline permettant de communiquer au mieux une information.",
         "image": "img/taxonomies/Design-et-Graphisme-lartboratoire.webp",
         "alt":"Forme abstraite, filtre rose pastel sur l'ensemble de l'image.",
         "cred": ""
@@ -150,6 +158,7 @@ let allTags = {
         "desc": [
             "Découvrez les créations des artistes maniant tablettes et pinceaux virtuels ! Le digital painting se fait sur un ordinateur, à travers un logiciel, mais cela n'enlève rien à sa beauté. Que ce soit avec Gimp, Photoshop ou Paint, le résultat est splendide alors n'attendez plus…",
         ],
+        "metadesc": "Tout sur le digital paiting, réalisations via ordinateur, tablettes et pinceaux virtuels !",
         "image": "img/taxonomies/Digital-painting-Hai.webp",
         "alt":"Illustration par HAI, filtre rose pastel sur l'ensemble de l'image.",
         "cred": '<a href="/pastel-art-tranquillite-illustrations-hai/">HAI</a>'
@@ -159,6 +168,7 @@ let allTags = {
         "desc": [
             "Chaque année, le mois d'octobre est marqué par l'Inktober. Ce défi artistique rassemble des milliers de créateurs avec un unique but… Progresser en dessinant chaque jour un nouveau croquis. L'artboratoire vous propose une sélection des œuvres marquantes des différentes éditions avec, en bonus, quelques conseils !",
         ],
+        "metadesc": "Thèmes, techniques, listes, sélections... Tout connaître sur l'Inktober, un défi artistique rassemblant des milliers de créateurs chaque octobre !",
         "image": "img/taxonomies/bouteille_loishh_inktober2018.webp",
         "alt":"Jeune femme regardant des bouteilles contenant des parchemins, illustration par Loishh, filtre rose pastel sur l'ensemble de l'image.",
         "cred": '/inktober-2018-selection-semaine-3/">Loishh</a>'
@@ -178,6 +188,7 @@ let allTags = {
         "desc": [
             "Posez un instant votre appareil photo et admirez les créations des artistes venus du monde entier ! Qu'elle soit amatrice ou professionnelle, surréaliste ou non, un portrait ou un paysage… vous trouverez sûrement photographie à votre goût !",
         ],
+        "metadesc": "Ici, la photographie sous toutes ses formes et techniques est à l'honneur !",
         "image": "img/taxonomies/Appareil-photo-Alexander-Andrews.webp",
         "alt":"Vieil appareil photo, filtre rose pastel sur l'ensemble de l'image.",
         "cred": ""
@@ -197,6 +208,7 @@ let allTags = {
         "desc": [
             "Vous pensiez être un hipster avec votre appareil argentique ? Attendez de découvrir le sténopé, l'ancêtre de la photographie ! S'il semble archaïque, ce procédé technique laisse une grande part à l'émotion…",
         ],
+        "metadesc": "Vous pensiez être un hipster avec votre appareil argentique ? Attendez de découvrir le sténopé, l'ancêtre de la photographie !",
         "image": "img/taxonomies/Sténopé-Sténopé-Chris-Keeney.webp",
         "alt":"Sténopé en double exposition d'un enfant à plage par Chris Keeney, filtre rose pastel sur l'ensemble de l'image.",
         "cred": '<a href="/stenope-ressourcer-photographie/">Chris Keeney</a>'
@@ -206,6 +218,7 @@ let allTags = {
         "desc": [
             "Les murs des villes sont autant de tableaux sur lesquels s'exprimer. La communauté street art l'a bien compris… Admirez les créations d'artistes urbains aux travaux variés, prenant d'assaut le béton.",
         ],
+        "metadesc": "Tout sur le street art, les graffitis, tags, et autres tableaux urbains.",
         "image": "img/taxonomies/Street-art-et-tags.webp",
         "alt":"Tags dans une ruelle, filtre rose pastel sur l'ensemble de l'image.",
         "cred": ""
@@ -215,6 +228,7 @@ let allTags = {
         "desc": [
             "Parfois, la réalité ne suffit plus à l'imagination. Le surréalisme vient à la rescousse et des univers incroyables naissent. Laissez-vous emporter dans les œuvres vertigineuses et poétiques d'artistes tous plus talentueux les uns que les autres !",
         ],
+        "metadesc": "Parfois, la réalité ne suffit plus à l'imagination. Découvrez les œuvres vertigineuses et poétiques d'artistes tous plus talentueux les uns que les autres !",
         "image": "img/taxonomies/Impact-Erik-Johansson.webp",
         "alt":"Photo-montage d'Erik Johansson dans un canoë brisant le miroir formé par un lac, filtre rose pastel sur l'ensemble de l'image.",
         "cred": '<a href="/erik-johansson-photographie-surrealiste/">Erik Johansson</a>'
